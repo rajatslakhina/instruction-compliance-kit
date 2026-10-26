@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="430" viewBox="0 0 980 430">
+<rect width="980" height="430" rx="12" fill="#0f172a"/>
+<text x="490" y="36" fill="#f8fafc" font-family="Helvetica, Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle">InstructionComplianceKit</text>
+<text x="490" y="60" fill="#94a3b8" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle">the checkable instructions in a request &#8594; whether the answer kept them</text>
+<rect x="24" y="90" width="210" height="96" rx="8" fill="#1e293b" stroke="#38bdf8"/>
+<text x="129" y="116" fill="#7dd3fc" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">DirectiveReader</text>
+<text x="129" y="140" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">clauses &#183; tokens &#183; quotes</text>
+<text x="129" y="158" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">length &#183; list &#183; terms &#183; case</text>
+<text x="129" y="176" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">opening &#183; ending &#183; format</text>
+<rect x="268" y="90" width="210" height="96" rx="8" fill="#1e293b" stroke="#f59e0b"/>
+<text x="373" y="116" fill="#fcd34d" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">ConflictDetector</text>
+<text x="373" y="140" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">runs before the call</text>
+<text x="373" y="158" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">&#8804;2 sentences vs &#8805;3 paras</text>
+<text x="373" y="176" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">use "x" vs never use "x"</text>
+<rect x="512" y="90" width="210" height="96" rx="8" fill="#1e293b" stroke="#22c55e"/>
+<text x="617" y="116" fill="#86efac" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">ComplianceChecker</text>
+<text x="617" y="140" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">TextMeasure &#183; TextMatch</text>
+<text x="617" y="158" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">strict + loose readings</text>
+<text x="617" y="176" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">(IFEval-style)</text>
+<rect x="756" y="90" width="200" height="96" rx="8" fill="#1e293b" stroke="#a78bfa"/>
+<text x="856" y="116" fill="#c4b5fd" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">ComplianceReport</text>
+<text x="856" y="140" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">verdict &#183; accuracy</text>
+<text x="856" y="158" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">note (for the user)</text>
+<text x="856" y="176" fill="#cbd5e1" font-family="Menlo, monospace" font-size="11" text-anchor="middle">feedback (for the model)</text>
+<line x1="234" y1="138" x2="266" y2="138" stroke="#64748b" stroke-width="2"/>
+<line x1="478" y1="138" x2="510" y2="138" stroke="#64748b" stroke-width="2"/>
+<line x1="722" y1="138" x2="754" y2="138" stroke="#64748b" stroke-width="2"/>
+<rect x="24" y="222" width="932" height="88" rx="8" fill="#1e293b" stroke="#f472b6"/>
+<text x="490" y="248" fill="#f9a8d4" font-family="Helvetica, Arial, sans-serif" font-size="15" font-weight="bold" text-anchor="middle">ComplianceSession (actor)</text>
+<text x="490" y="272" fill="#cbd5e1" font-family="Menlo, monospace" font-size="12" text-anchor="middle">begin(request:) &#8594; TurnPlan: this turn's instructions + standing ones not replaced, minus lifted families</text>
+<text x="490" y="292" fill="#cbd5e1" font-family="Menlo, monospace" font-size="12" text-anchor="middle">review(answer:) &#8594; ComplianceReport &#183; totals across the conversation</text>
+<rect x="24" y="338" width="932" height="68" rx="8" fill="#111827" stroke="#334155"/>
+<text x="490" y="364" fill="#94a3b8" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle">ProviderGatewayKit sends the turn &#183; OutputRepairKit can re-prompt with report.feedback &#183; ai-chat-app shows report.note</text>
+<text x="490" y="388" fill="#94a3b8" font-family="Helvetica, Arial, sans-serif" font-size="13" text-anchor="middle">no dependencies: plain strings in, Sendable values out</text>
+</svg>

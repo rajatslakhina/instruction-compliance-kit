@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="862" viewBox="0 0 1000 862">
+<rect width="1000" height="862" rx="10" fill="#0f172a"/>
+<circle cx="22" cy="20" r="6" fill="#ef4444"/><circle cx="42" cy="20" r="6" fill="#f59e0b"/><circle cx="62" cy="20" r="6" fill="#22c55e"/>
+<text x="500" y="25" fill="#94a3b8" font-family="Menlo, monospace" font-size="13" text-anchor="middle">swift run InstructionComplianceDemo &#8212; real output, abridged</text>
+<text x="20" y="60" fill="#7dd3fc" font-family="Menlo, monospace" font-size="13">&#9472;&#9472; 3. A violation, the feedback for the model, and the rewrite</text>
+<text x="20" y="84" fill="#86efac" font-family="Menlo, monospace" font-size="13">&#160;&#160; at most 79 words&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;met&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 47 words</text>
+<text x="20" y="108" fill="#fca5a5" font-family="Menlo, monospace" font-size="13">&#160;&#160; between 3 and 5 list items&#160;&#160;&#160;&#160;violated&#160;&#160;&#160;&#160;6 list items</text>
+<text x="20" y="132" fill="#86efac" font-family="Menlo, monospace" font-size="13">&#160;&#160; a bulleted list&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; met&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 6 bulleted items</text>
+<text x="20" y="156" fill="#fca5a5" font-family="Menlo, monospace" font-size="13">&#160;&#160; end with a question&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; violated&#160;&#160;&#160;&#160;ends with &#34;.&#34;</text>
+<text x="20" y="180" fill="#fca5a5" font-family="Menlo, monospace" font-size="13">&#160;&#160; don't use &#34;synergy&#34;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; violated&#160;&#160;&#160;&#160;uses &#34;synergy&#34; once</text>
+<text x="20" y="204" fill="#86efac" font-family="Menlo, monospace" font-size="13">&#160;&#160; don't use &#34;vendor names&#34;&#160;&#160;&#160;&#160;&#160;&#160;met&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; no &#34;vendor names&#34;</text>
+<text x="20" y="228" fill="#fca5a5" font-family="Menlo, monospace" font-size="13">&#160;&#160; verdict: violated&#160;&#160;strict 50%&#160;&#160;loose 50%</text>
+<text x="20" y="252" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13"></text>
+<text x="20" y="276" fill="#7dd3fc" font-family="Menlo, monospace" font-size="13">&#9472;&#9472; 4. Conflicts found before anyone pays for an answer</text>
+<text x="20" y="300" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160; request: Explain it in at most 2 sentences, across at least 3 paragraphs.</text>
+<text x="20" y="324" fill="#fca5a5" font-family="Menlo, monospace" font-size="13">&#160;&#160; &#10007; at most 2 sentences / at least 3 paragraphs: at least 3 paragraphs need at least 3 sentences, more than at most 2</text>
+<text x="20" y="348" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160; request: Mention &#34;latency&#34; in the answer. Never use the word &#34;latency&#34;.</text>
+<text x="20" y="372" fill="#fca5a5" font-family="Menlo, monospace" font-size="13">&#160;&#160; &#10007; use &#34;latency&#34; / don't use &#34;latency&#34;: &#34;latency&#34; is both required and ruled out</text>
+<text x="20" y="396" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160; request: Return valid JSON as a bulleted list, all in lowercase and all caps.</text>
+<text x="20" y="420" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13"></text>
+<text x="20" y="444" fill="#7dd3fc" font-family="Menlo, monospace" font-size="13">&#9472;&#9472; 5. Standing instructions across turns</text>
+<text x="20" y="468" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160; turn 1: From now on, answer in all lowercase and keep every answer under 40 words. What is a mutex?</text>
+<text x="20" y="492" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160;&#160;&#160; in force: at most 39 words*, all lowercase*</text>
+<text x="20" y="516" fill="#86efac" font-family="Menlo, monospace" font-size="13">&#160;&#160;&#160;&#160; verdict: compliant</text>
+<text x="20" y="540" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160; turn 2: And a semaphore?</text>
+<text x="20" y="564" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160;&#160;&#160; in force: at most 39 words*, all lowercase*&#160;&#160;(carried: 2)</text>
+<text x="20" y="588" fill="#fca5a5" font-family="Menlo, monospace" font-size="13">&#160;&#160;&#160;&#160; verdict: violated&#160;&#160;has capital letters</text>
+<text x="20" y="612" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160; turn 3: Forget the word limit. Explain condition variables properly.</text>
+<text x="20" y="636" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160;&#160;&#160; in force: all lowercase*&#160;&#160;(carried: 1)&#160;&#160;(lifted: length)</text>
+<text x="20" y="660" fill="#86efac" font-family="Menlo, monospace" font-size="13">&#160;&#160;&#160;&#160; verdict: compliant</text>
+<text x="20" y="684" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160; turn 4: Answer in all caps this time: what is a spinlock?</text>
+<text x="20" y="708" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160;&#160;&#160; in force: all uppercase</text>
+<text x="20" y="732" fill="#86efac" font-family="Menlo, monospace" font-size="13">&#160;&#160;&#160;&#160; verdict: compliant</text>
+<text x="20" y="756" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160; turn 5: What about a barrier?</text>
+<text x="20" y="780" fill="#e2e8f0" font-family="Menlo, monospace" font-size="13">&#160;&#160;&#160;&#160; in force: all lowercase*&#160;&#160;(carried: 1)</text>
+<text x="20" y="804" fill="#86efac" font-family="Menlo, monospace" font-size="13">&#160;&#160;&#160;&#160; verdict: compliant</text>
+<text x="20" y="828" fill="#fca5a5" font-family="Menlo, monospace" font-size="13">&#160;&#160; totals: 5 turns, 7 checks, 6 met, 1 violated</text>
+</svg>

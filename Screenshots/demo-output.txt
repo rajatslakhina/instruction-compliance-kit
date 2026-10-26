@@ -1,0 +1,120 @@
+InstructionComplianceKit demo: the checkable instructions in a request, and whether the answer kept them
+
+── 1. Reading one request
+   request: Summarize this 2,000-word incident report in under 80 words, as 3 to 5 bullet points. Don't mention the vendor names, avoid the word "synergy", and end with a question.
+   • at most 79 words
+   • between 3 and 5 list items
+   • a bulleted list
+   • end with a question
+   • don't use "synergy"
+   • don't use "vendor names"
+   ("this 2,000-word incident report" describes the material, so it is not a limit)
+
+── 2. A preamble the loose reading sets aside
+   | Sure! Here is a short summary of the incident for you:
+   | - The cache layer stopped answering at 09:12 after a config push.
+   | - Failover took 14 minutes because the health check was disabled.
+   | - The config push has been reverted and the check turned back on.
+   | Should the health check be made mandatory before any config push?
+   | Let me know if you want the full timeline.
+   at most 79 words              met         65 words
+   between 3 and 5 list items    met         3 list items
+   a bulleted list               met         3 bulleted items
+   end with a question           metLoosely  ends with "."
+   don't use "synergy"           met         no "synergy"
+   don't use "vendor names"      met         no "vendor names"
+   verdict: compliantLoosely  strict 83%  loose 100%
+
+── 3. A violation, the feedback for the model, and the rewrite
+   | - Acme Cloud's cache layer stopped answering at 09:12 after a config push.
+   | - Failover took 14 minutes because the health check was disabled.
+   | - The team showed real synergy in the recovery.
+   | - The config push was reverted.
+   | - The check is back on.
+   | - A review is booked for Friday.
+   at most 79 words              met         47 words
+   between 3 and 5 list items    violated    6 list items
+   a bulleted list               met         6 bulleted items
+   end with a question           violated    ends with "."
+   don't use "synergy"           violated    uses "synergy" once
+   don't use "vendor names"      met         no "vendor names"
+   verdict: violated  strict 50%  loose 50%
+   note: This answer doesn't follow 3 of the 6 instructions in your request: between 3 and 5 list items (6 list items); end with a question (ends with "."); don't use "synergy" (uses "synergy" once).
+   feedback sent back to the model:
+   | The answer above breaks these instructions from the user's request:
+   | - between 3 and 5 list items (the answer: 6 list items)
+   | - end with a question (the answer: ends with ".")
+   | - don't use "synergy" (the answer: uses "synergy" once)
+   | Rewrite it so it follows every one of them. Keep everything else the same.
+   rewrite:
+   | - The cache layer stopped answering at 09:12 after a config push.
+   | - Failover took 14 minutes because the health check was disabled.
+   | - The push is reverted and the check is back on.
+   | Should health checks block config pushes from now on?
+   at most 79 words              met         41 words
+   between 3 and 5 list items    met         3 list items
+   a bulleted list               met         3 bulleted items
+   end with a question           met         ends with a question
+   don't use "synergy"           met         no "synergy"
+   don't use "vendor names"      met         no "vendor names"
+   verdict: compliant  strict 100%  loose 100%
+
+── 4. Conflicts found before anyone pays for an answer
+   request: Explain it in at most 2 sentences, across at least 3 paragraphs.
+   ✗ at most 2 sentences / at least 3 paragraphs: at least 3 paragraphs need at least 3 sentences, more than at most 2 sentences allows
+   request: Mention "latency" in the answer. Never use the word "latency".
+   ✗ use "latency" / don't use "latency": "latency" is both required and ruled out
+   request: Return valid JSON as a bulleted list, all in lowercase and all caps.
+   ✗ a bulleted list / valid JSON: valid JSON cannot be a markdown list
+   ✗ all lowercase / all uppercase: an answer cannot be all lowercase and all uppercase
+
+── 5. Standing instructions across turns
+   turn 1: From now on, answer in all lowercase and keep every answer under 40 words. What is a mutex?
+     in force: at most 39 words*, all lowercase*
+     verdict: compliant
+   turn 2: And a semaphore?
+     in force: at most 39 words*, all lowercase*  (carried: 2)
+     verdict: violated  has capital letters
+   turn 3: Forget the word limit. Explain condition variables properly.
+     in force: all lowercase*  (carried: 1)  (lifted: length)
+     verdict: compliant
+   turn 4: Answer in all caps this time: what is a spinlock?
+     in force: all uppercase
+     verdict: compliant
+   turn 5: What about a barrier?
+     in force: all lowercase*  (carried: 1)
+     verdict: compliant
+   totals: 5 turns, 7 checks, 6 met, 1 violated
+
+── 6. What the reader leaves alone
+   Rewrite this 500-word email in 3 sentences.
+     → exactly 3 sentences
+   Give me 2 paragraphs, each under 60 words.
+     → exactly 2 paragraphs
+   Translate 'Good morning' into French.
+     → nothing to check
+   Don't use a numbered list, use bullets.
+     → a bulleted list
+   Mention the price somewhere.
+     → nothing to check
+
+── 7. JSON, tables, plain text and commas
+   request: Give the result as valid JSON.
+   | ```json
+   | {"region": "eu-west", "errors": 14}
+   | ```
+   valid JSON                    met         valid JSON
+   verdict: compliant  strict 100%  loose 100%
+   request: Compare the two plans in a table.
+   | | Plan | Price |
+   | |---|---|
+   | | Basic | $9 |
+   | | Pro | $29 |
+   a table                       met         has a table
+   verdict: compliant  strict 100%  loose 100%
+   request: Plain text only, no markdown and no commas.
+   | **Short answer**: yes, but only on weekdays, and only before 9.
+   plain text, no markdown       violated    uses markdown: bold
+   no commas                     violated    2 commas
+   verdict: violated  strict 0%  loose 0%
+   note: This answer doesn't follow 2 of the 2 instructions in your request: plain text, no markdown (uses markdown: bold); no commas (2 commas).
